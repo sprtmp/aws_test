@@ -1,0 +1,1174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none
+}
+body{
+    background-color: #000000 !important;
+    width: 100%;
+    overflow-x: hidden;
+    font-family: 'Times New Roman', Times, serif
+}
+
+/*___________ROBOTO FONT____________*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+$extraLarge: 52px;
+$large: 60px;
+$medium: 24px;
+$small: 17px;
+
+/*___SASS for roboto Font Family____*/
+// $roboto: "Roboto", serif;
+
+
+
+/*____SASS for color_____*/
+
+$white: #fff;
+$lightgray: #b4b4b4;
+
+$black: #231f20;
+
+@mixin largeText{
+  font-size: $large;
+  font-family: 'Times New Roman', Times, serif;
+  color: $white;
+}
+
+@mixin smallText{
+  font-size: $small;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+@mixin mediumText{
+    font-size: $medium;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .main-body{
+    background-image: url('../images/butterfly-dots.png');
+    background-size: 47% auto;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+header{
+    position: relative;
+    //box-shadow: 3px 4px 12px rgba(0,0,0,0.4);
+    .top-part{
+       background-color: #f6edda;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       position: relative;
+       z-index: 3;
+       transition: .3s linear;
+       .icon{
+            width: 6%;
+            transition: .4s linear;
+            img{
+              width: 100%;
+            }
+           &:nth-child(2){
+            z-index: 2;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 25%);
+            transition: .3s linear;
+           }
+       }
+       
+    }
+    // .ashoka-stabh{
+    //     position: absolute;
+    //     left: 50%;
+    //     top: 40%;
+    //     transform: translate(-50%,-60%);
+    //     z-index: 1;
+    // }
+    .bottom-part{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        position: relative;
+        width: 80%;
+        margin: -1px auto;
+        transition: .3s linear;
+        img{
+          width: 100%;
+        }
+        ul{
+            padding: 0;
+            position: absolute;
+            // bottom: 28%;
+            // transform: translate(0,67%);
+            top: 50%;
+            transform: translate(0, 50%);
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+            padding: 0 6%;
+            margin: 0;
+            z-index: 4;
+            transition: .3s linear;
+            li{
+                list-style: none;
+                display: inline-block;
+                a{
+                    color: $black;
+                    @include mediumText;
+                    &:active{
+                        color: green;
+                    }
+                }
+            }
+        }
+    }
+}
+.bottom-part ul li a.active{
+    // background-color: #22563c;
+    padding: 5px 10px;
+    border-radius: 8px;
+    color: #22563c;
+}
+
+main {
+    margin-top: 16%;
+    overflow: hidden;
+    .page-title{
+        text-align: center;
+        overflow: hidden;
+        h1{
+            text-align: center;
+            @include largeText;
+            position: relative;
+            display: inline-block;
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translate(-101%,50%);
+                height: .5px;
+                width: 1000px;
+                background-color:  #333;
+            }
+            &::after {
+                position: absolute;
+                content: '';
+                right: 0;
+                top: 50%;
+                transform: translate(101%,50%);
+                width: 1000px;
+                height: .5px;
+                background-color: #333;
+            }
+        }
+        img{
+            transform: translate(-4px, -32px);
+        }
+    } 
+}
+
+.home-lepidoptera > .row > .col-md-4{
+    display:none;
+}
+
+.load-more{
+    display: block;
+    margin: 4% 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #dfc053;
+}
+.load-more .circle{
+    height: 0;
+    width: 0;
+    border: none;
+    border-radius: 50%;
+    transition: .5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $small;
+    overflow: hidden;
+}
+.load-more:hover{
+    color:  #22563c;
+}
+.load-more:hover .circle{
+    height: 70px;
+    width: 70px;
+    border: 1px solid gray;
+}
+
+.home-lepidoptera>div img, .home-paper-cutting>div img{
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+.home-lepidoptera>div .information, .home-paper-cutting>div .description{
+    margin-top: -16%;
+    background: #080808;
+    z-index: 2;
+    position: relative;
+    margin-bottom: 3%;
+    padding: 20px;
+    width: 94%;
+    border-top-right-radius: 25px;
+    span{
+      color: #dfc053;
+      font-size: $small;
+      font-weight: 600;
+    }
+    h2{
+      color: $white;
+      font-size: $medium;
+    }
+    p{
+        color: $lightgray;
+        font-size: $small;
+        line-height: 1.1;
+    }
+    a{
+        color: #dfc053;
+        font-size: $small;
+        i{
+            transform: rotate(35deg);
+            transition: .6s;
+        }
+        &:hover {
+            opacity: .8;
+            i{
+                transform: rotate(90deg);
+            }
+        }
+    }
+}
+
+.filter-drop-down{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 45px;
+    background-color: $white;
+    padding: 10px;
+    z-index: 1;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s ease;
+    input{
+        padding: 5px 0;
+        padding-left: 5px;
+        color: black;
+    }
+    button{
+        background: $black;
+        padding: 5px;
+        color: $white !important;
+        &:hover{
+            color: #0b0b0b !important;
+            opacity: .7;
+        }
+    }
+}
+.search-area form input {
+    width: 100%;
+}
+
+.search-area{
+    padding: 0 10%;
+    form{
+        input{
+            background: transparent;
+            border: 1px solid #3c3b3b;
+            border-radius: 0 !important;
+            color: $white;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: $small;
+            &:focus{
+                background: transparent;
+                color: white;
+            }
+        }
+        button,a{
+            color: $white;
+            border: 1px solid #0b0b0b;
+            border-radius: 0  !important;
+            margin: 0;
+            border: none !important;
+            background-color: #212529 !important;
+            i{
+                color:#eae325;
+                color: #dfc053 !important;
+            }
+            &:hover{
+                background-color: $white;
+                color: $white;
+                i{
+                    color: $white;
+                }
+            }
+        }
+    }
+}
+
+// footer {
+//    // border-top: 1px solid rgb(41, 40, 40);
+//     .info{
+//         p{
+//            @include smallText;
+//            font-family: 'Times New Roman', Times, serif;;
+//            color: $white;
+//            margin: 0;
+//         }
+//         ul{
+//             padding: 0;
+//             margin: 0;
+//             li{
+//                 list-style: none;
+//                 display: inline;
+                
+//                 a{
+//                     i{
+//                       font-size: $small;
+//                       color: $black;
+//                       height: 40px;
+//                       width: 40px;
+//                       display: flex;
+//                       align-items: center;
+//                       justify-content: center;
+//                       background: #eae325;
+//                       border-radius: 50%;
+//                       transition: .3s linear;
+//                       &:hover{
+//                         transform: translateX(1px);
+//                         opacity: .6;
+//                       }
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+div.dt-container .dt-paging .dt-paging-button {
+    background: #dfc053;
+    color: #221d0b;
+    transition: .5s;
+}
+div.dt-container .dt-paging .dt-paging-button:hover{
+    background: $white;
+    color: #221d0b !important;
+}
+div.dt-container .dt-paging .dt-paging-button.current{
+    color: white !important;
+}
+tbody, td, tfoot, th, thead, tr {
+    color: $white !important;
+}
+// table.dataTable > tbody > tr :nth-child(even){
+//    background-color: #0b0b0b;
+// }
+table{
+    border-collapse: separate;
+    // background-image: url('../images/butterfly-dots.png');
+    // background-size: 47% auto;
+    // background-repeat: no-repeat;
+    // background-position: top right;
+    // background-attachment: fixed;
+    // background-attachment: scroll;
+}
+table.dataTable > tbody > tr:nth-child(even) {
+    background-color: #1e1e1e;
+}
+table.dataTable > tbody > tr > td{
+    border-top: 1px solid #0b0b0b !important;
+    padding: 20px 10px;
+    font-family: 'Times New Roman', Times, serif;;
+}
+table.dataTable > tbody > tr > td a{
+    padding: 7px 12px;
+    background-color: #dfc053;
+    color: #221d0b;
+    border-radius: 20px;
+    transition: .3s linear;
+}
+table.dataTable > tbody > tr > td a:hover{
+    background-color: $white;
+    color: #221d0b;
+}
+thead{
+    border-radius: 1px solid #0b0b0b !important ;
+}
+tfoot{
+    display: none;
+}
+table.dataTable thead > tr > th{
+   background: #0b0b0b;
+//    border: 1px solid $white;
+   border: 1px solid #3c3b3b !important;
+   border-top: 0;
+   background-color: #1e1e1e;
+}
+div.dt-container div.dt-layout-full > *:only-child {
+    border: 1px solid #3c3b3b !important;
+    font-size: $small;
+}
+div.dt-container .dt-info {
+    color: $white;
+}
+div.dt-container .dt-length{
+    display: none;
+}
+div.dt-container .dt-search{
+    display: none;
+}
+table.dataTable th.dt-type-numeric, table.dataTable th.dt-type-date, table.dataTable td.dt-type-numeric, table.dataTable td.dt-type-date {
+    text-align: left !important;
+}
+div.dt-container div.dt-layout-row {
+    margin: 35px 0;
+}
+
+/*=========Lapidoptera Information==========*/
+
+.main-container{
+    background-image: url('../images/dots.png');
+    background-size: 80% auto;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.desc{
+    overflow: hidden;
+    padding-left: 1%;
+    // background-image: url('../images/detail-butterfly.png');
+    // background-size: 20% auto;
+    // background-repeat: no-repeat;
+    // background-position: right bottom;
+}
+.desc{
+
+}
+.desc h5{
+    color: $white;
+    font-size: $large;
+    font-family: 'Times New Roman', Times, serif;
+    display: inline-block;
+    position: relative;
+    // &::before {
+    //     content: '';
+    //     position: absolute;
+    //     left: 0;
+    //     top: 50%;
+    //     transform: translate(-102%,50%);
+    //     height: .5px;
+    //     width: 700px;
+    //     background-color:  $white;
+    // }
+    // &::after {
+    //     position: absolute;
+    //     content: '';
+    //     right: 0;
+    //     top: 50%;
+    //     transform: translate(102%,50%);
+    //     width: 700px;
+    //     height: .5px;
+    //     background-color: $white;
+    // }
+}
+.desc p{
+    font-weight: 250;
+    letter-spacing: 1px;
+}
+ .lapidoptera-info{
+    font-family: 'Times New Roman', Times, serif;;
+    color: $white;
+    b{
+
+    }
+    p{
+
+    }
+ }
+ .lapidoptera-info > div:nth-child(1){
+    margin-left: 0%;
+ }
+ .lapidoptera-info > div:nth-child(2){
+    margin-left: 2%;
+ }
+ .lapidoptera-info > div:nth-child(3){
+    margin-left: 4%;
+ }
+ .lapidoptera-info > div:nth-child(4){
+    margin-left: 6%;
+ }
+ .lapidoptera-info > div:nth-child(5){
+    margin-left: 8%;
+ }
+ .lapidoptera-info > div:nth-child(6){
+    margin-left: 10%;
+ }
+ .lapidoptera-info > div:nth-child(7){
+    margin-left: 12%;
+ }
+
+// @for $i from 2 through 7 {
+//     .lapidoptera-info > div:nth-child(#{$i}) {
+//       margin-left: ($i+3%);
+//     }
+// }
+
+
+
+ .distribution-wrap{
+    padding: 1% 0;
+    background-color: #1e1e1e;
+    .box{
+        border: 1px solid #595959;
+        margin-top: 0;
+        margin: 20px 20px;
+        padding: 20px 20px;
+        position: relative;
+        transition: .6s linear;
+        min-height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 12px;
+        // box-shadow: 2px 3px 10px rgba(0,0,0,0.5);
+        // border-top-right-radius: 20px;
+        // border-bottom-left-radius: 20px;
+        // &:hover{
+        //     box-shadow: 2px 3px 12px rgba(0,0,0,0.5);
+        // }
+    }
+    h5{
+      font-family: 'Times New Roman', Times, serif;
+      color: $white;
+      font-size: $large;
+      text-align: center;
+      margin: 20px 0 0 0;
+    }
+    b{
+      color: $white;
+      font-size: 20px;
+      line-height: 1;
+      color: $white;
+      display: block;
+      text-align: center;
+      background-color: $white;
+      width: 70%;
+      padding: 7px;
+      position: absolute;
+      top: calc(-4% - 10px);
+      left: 50%;
+      border-radius: 15px;
+      transform: translate(-50%, 0);
+      background-image: linear-gradient(90deg, #296748 11%, #051c11 122%, #45d18b 98%, #22563c 110%, #22563c 42%);
+    }
+    p{
+     color: $white;
+     text-align: center;
+    //  margin-top: 5%;
+    //  margin: 36px 0;
+
+    }
+}
+
+.distribution-wrap .row{
+    border-radius: 17px;
+    background-color: #1e1e1e;
+    padding: 15px;
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+//  .distribution-wrap .box:first-child {
+//    padding-left: 0 !important;  
+//  }
+
+// .distribution-wrap .box:last-child{
+//   border-right: none;
+// }
+
+.lapidoptera-gallery{
+    margin-bottom: 4%;
+    background-image: url('../images/detail-butterfly.png');
+    background-size: 8% auto;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-attachment: fixed;
+    h5{
+        font-family: 'Times New Roman', Times, serif;
+        color: $white;
+        font-size: $large;
+        text-align: center;
+    }
+    .row{
+        img{
+           border-top-right-radius: 25px;
+           border-bottom-left-radius: 25px;
+        }
+    }
+}
+/*==================END==================*/
+
+
+/*===========Video for Index page===========*/
+.myVideo{
+    // position: fixed;
+    // bottom: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    object-fit: cover; 
+    z-index: 1;
+}
+
+.vid-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 1;
+    width: 100%;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -40%);
+    h3{
+      font-size: 35px;
+      color: $white;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+      font-weight: 400;
+    }
+    h1{
+      font-size: 110px;
+      color: $white;
+      font-family: 'Times New Roman', Times, serif;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-align: center;
+    }
+    .search-bar{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        width: 55%;
+        i{
+            font-size: $medium;
+            color: $white;
+            transform: translateY(10px);
+            font-size: 45px;
+        }
+        input{
+          width: 100%;
+          background: transparent;
+          border: none;
+          border-bottom: 1px solid #a7a6a4;
+          color: white;
+          font-family: 'Times New Roman', Times, serif;;
+          font-size: 30px;
+            &:focus{
+                outline: 0;
+                padding: 0 10px;
+            }
+        }
+    }
+}
+
+.counter{
+    background-color: #f6edda;
+    width: 120px;
+    padding: 5px;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    position: absolute;
+    z-index: 2;
+    right: 2%;
+    bottom: -6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    p{
+      margin-bottom: 0;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;;
+      font-size: 12px;
+      line-height: 1.1;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+    h4{
+      margin-bottom: 2px;
+      text-align: center;
+      font-size: 20px;
+      color: #22563c;
+      font-weight: 600;
+    }
+}
+
+/*===============End=======================*/
+
+// table{
+//     // background-image: url('../images/bg-3.png');
+//     // background-size: 100%;
+//     // background-repeat: no-repeat;
+//     // background-position: center;
+//     // background-size: cover;
+// }
+// table::after{
+//     content: '';
+//     //position: absolute;
+//     z-index: -1;
+// }
+
+
+//Directly linked with js 
+
+.mid-icon{
+    z-index: 2;
+    position: static !important;
+    left: 50%;
+    transform: translate(0%, 0%) !important;
+}
+.all-icons{
+    justify-content: start !important;
+}
+.icon-width{
+   width: 4.5% !important;
+}
+.bottom-part-style{
+    margin-top: -9% !important;
+    width: 100% !important; 
+}
+.menu-item-style{
+    padding-right: 1% !important;
+    justify-content: end !important;
+    gap: 1.5% !important;
+}
+
+//----------END OF DIRECTLY LINKED WITH JS------------//
+
+.pdf-container{
+    display: grid;
+    grid-template-columns: repeat(5,1.2fr);
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+}
+.pdf-container > div{
+    width: 100%;
+    background-color: $white;
+    padding: 4%;
+    padding: 19%;
+    border-radius: 20px;
+    background-image: url('../images/curve.png');
+    background-size: 90% auto;
+    background-repeat: no-repeat;
+    background-position: 50% 100%;
+    position: relative;
+    img{
+        width: 100%;
+        padding-bottom: 21%;
+    }
+    p{
+        color: $white;
+        font-size: $medium;
+        text-align: center;
+        position: absolute;
+        left: 50%;
+        bottom: 5px;
+        transform: translate(-50%,0);
+        margin-bottom: 0;
+    }
+}
+
+/*=================(ABOUT US PAGE START)=========================*/
+
+.text-content{
+    background-image: url(../images/detail-butterfly.png);
+    background-size: 13% auto;
+    background-repeat: no-repeat;
+    background-position: right top;
+    p{
+        font-size: $small;
+        font-family: 'Times New Roman', Times, serif;;
+        text-align: left;
+        color: $white;
+        font-weight: 300;
+        margin-bottom: 4%;
+    }
+}
+
+.members{
+   .member{
+        img{
+            border-top-right-radius: 25px;
+            border-bottom-left-radius: 25px;
+        }
+        .about-member{
+            color: $white;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            h5{
+                margin: 0;
+            }
+            P{
+                margin: 0;
+            }
+        }
+    }
+}
+
+/*=================(ABOUT US PAGE END)=========================*/
+
+.nav-item .nav-link{
+    background-color: $white  !important;
+    margin: 6px 12px;
+    color: #000000 !important;
+    border-radius: 26px !important;
+    font-size: 24px !important;
+    padding: 12px 35px !important;
+    font-weight:400;
+}
+
+.nav-item .nav-link.active{
+    background-image: linear-gradient(90deg, #296748 11%, #051c11 122%, #45d18b 98%, #22563c 110%, #22563c 42%);
+    color: $white !important;
+  
+}
+
+.graph-wrap .graph{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0px;
+    border: 1px solid #595959;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    padding-top: 10px;
+    min-height: 480px;
+    border-radius: 12px;
+}
+.graph_heading{
+    position: absolute;
+    top: -17px;
+    // background-color: white;
+    background-image: linear-gradient(90deg, #296748 11%, #051c11 122%, #45d18b 98%, #22563c 110%, #22563c 42%);
+    width: fit-content;
+    padding: 10px 20px;
+    color: $white;
+    line-height: .9;
+    border-radius: 15px;
+}
+.svg svg{
+     border-radius: 15px;
+}
+
+footer{
+    background-color: #0a0a0a;
+    padding: 3rem 1rem;
+    .footer-wrap{
+        margin: 0 15%;
+        color: $white;
+        font-size: $small;
+        button{
+            background-image: linear-gradient(90deg, #296748 11%, #051c11 100%, #45d18b 98%, #22563c 110%, #22563c 42%);
+            color: $white !important;
+            padding: 10px 30px;
+            border: none;
+            border-radius: 5px;
+        }
+        p{
+            padding: 10px 0 20px 0;
+            border-bottom: 1px solid rgb(54, 53, 53);
+        a{
+            color: #dfc053;
+        }
+        }
+        span{
+          font-size: 13px;
+        }
+    }
+}
+
+
+@media(max-width: 1600px){
+    header .bottom-part ul li a {
+        font-size: 18px;
+    }
+    .vid-content h1 {
+        font-size: 75px;
+    }
+    .vid-content .search-bar i {
+        font-size: 35px;
+    }
+    .vid-content .search-bar input {
+        font-size: 24px;
+    }
+    main .page-title h1 {
+        font-size: 50px;
+    }
+    .desc h5 {
+        color: #f6edda;
+        font-size: 50px;
+    }
+    .distribution-wrap h5 {
+        font-size: 50px;
+    }
+    .lapidoptera-gallery h5 {
+        font-size: 50px;
+    }
+    .nav-item .nav-link {
+        font-size: 19px !important;
+        padding: 6px 30px !important;
+        font-weight: 400;
+    }
+}
+
+@media(max-width: 1200px){
+    .pdf-container {
+        display: grid;
+        grid-template-columns: repeat(4, 1.2fr);
+    }
+}
+
+@media(max-width: 992px){
+    .vid-content h1 {
+        font-size: 60px;
+    }
+    .vid-content .search-bar i {
+        font-size: 30px;
+    }
+    .pdf-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1.2fr);
+    }
+    main {
+        margin-top: 114px;
+    }
+    header .bottom-part ul {
+        background: $white;
+    }
+    header .top-part .icon {
+        width: 60px;
+    }
+    header .top-part{
+        justify-content: start !important;
+    }
+    header .top-part .icon:nth-child(2) {
+        z-index: 2;
+        position: static;
+        transform: translate(0,0) !important;
+    }
+    .bottom-part ul{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: visible;
+        background: white;
+        gap: 2%;
+        justify-content: center !important;
+    }
+    .navbar-toggler{
+        position: absolute ;
+        width: fit-content;
+        right: 9px;
+        z-index: 10;
+    }
+    .navbar-toggler-icon i{
+        font-size: 32px;
+    }
+    header .bottom-part ul {
+        transform: translate(0,0) !important;
+        top: 0;
+        right: -1060px ;
+        align-items: center;
+    }
+    header .bottom-part {
+        width: 100%;
+    }
+
+    header .bottom-part img {
+       display: none;
+    }
+    header .bottom-part ul li {
+        width: 100%;
+        color: $white;
+        text-align: center;
+        transition: .5s;
+    }
+    // header .bottom-part ul li:hover{
+    //     background: $black;
+    // }
+
+    header .bottom-part ul li a {
+        font-size: 23px;
+        color: $black;
+        text-align: center;
+    }
+    // header .bottom-part ul li:hover a{
+    //     color: $white;
+    // }
+    
+    .collapse:not(.show) {
+        display: table;
+    }
+
+    .showMenu{
+        right: 0 !important;
+    }
+    .hideMenu{
+        right: -1000px;
+    }
+
+    div.dt-container div.dt-layout-row {
+        // width: 400%;
+        overflow-x: scroll;
+     }
+     div.dt-container div.dt-layout-row {
+        margin: 0;
+        border: 1px solid rgb(36, 35, 35);
+    }
+     .table-structure{
+        overflow-x: scroll;
+     }
+     div.dt-container div.dt-layout-full {
+        width: 300% !important;
+     }
+     div.dt-container div.dt-layout-full > *:only-child {
+        border: 1px solid #0b0b0b !important;
+        width: 200% !important;
+    }
+    .search-area input, .search-area .btn{
+        margin-bottom: 10px;
+    }
+    .search-area .btn{
+        padding: 12px !important;
+    }
+}
+
+@media(max-width:1150px){
+
+    table.dataTable > tbody > tr > td a{
+        width: 100%;
+        display: inline-block;
+        text-align: center;
+    }
+
+}
+
+@media(min-width: 992px ){
+    .navbar-toggler {
+        display: none !important;
+    }
+  
+}
+
+@media(max-width: 767px){
+
+    .distribution-wrap .w-50{
+       width: 100% !important;
+    }
+
+    .distribution-wrap .box:first-child {
+        padding: 10px 20px;
+    }
+    footer .footer-wrap {
+        margin: 0 4%;
+    }
+    footer .info p {
+        text-align: center;
+    }
+    .pdf-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1.2fr);
+    }
+
+    .lapidoptera-info > div{
+        margin-left: 0% !important;
+    }
+ 
+   
+    .distribution-wrap h5 {
+        font-size: 35px;
+    }
+    .desc h5 {
+        font-size: 35px;
+    }
+    .lapidoptera-gallery h5 {
+        font-size: 35px;
+    }
+    
+    .bottom-part{
+
+    }
+    .bottom-part img{
+        
+    }
+   
+    main .page-title h1 {
+        text-align: center;
+        font-size: 35px;
+        width: 60%;
+    }
+
+    .vid-content h3 {
+        font-size: 22px;
+    }
+    .vid-content h1 {
+        font-size: 40px;
+        text-align: center;
+    }
+    .vid-content .search-bar input {
+        font-size: 16px;
+    }
+
+    /*___REFERENCE PAGE START____*/
+
+    .pdf-container > div p {
+        font-size: 17px;
+    }
+
+    /*____REFERENCE PAGE END____*/
+
+
+    #desk-vid{
+        display: none;
+    }
+
+    #mob-vid{
+      display: block;
+    }
+}
+
+@media(min-width: 768px){
+    #desk-vid{
+      display: block;
+    }
+    #mob-vid{
+       display: none; 
+    }
+}
+
