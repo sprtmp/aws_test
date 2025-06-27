@@ -1,3 +1,0 @@
-This is just a regular test file.
-However, this line contains the word BLOCK.
-So the pre-push hook should stop the push.
